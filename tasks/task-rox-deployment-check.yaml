@@ -14,9 +14,6 @@ spec:
       type: string
       description: YAML file in the deployfiles workspace
       default: deployment.yaml
-    # - name: deployment_files_path
-    #   type: string
-    #   description: Path/Folder for the k8s deployment files to check
     - name: manifest_dir
       description: The directory in source that contains yaml manifests
       type: string
