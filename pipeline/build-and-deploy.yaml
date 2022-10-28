@@ -26,23 +26,6 @@ spec:
     type: string
     description: Secret containing the StackRox API token with CI permissions    
   tasks:
-
-
-  # - name: rox-image-check
-  #   taskRef:
-  #     name: rox-image-check
-  #     kind: ClusterTask
-  #   params:
-  #     - name: rox_central_endpoint
-  #       value: $(params.rox_central_endpoint)
-  #     - name: rox_api_token
-  #       value: $(params.rox_api_token)
-  #     - name: image
-  #       value: $(params.IMAGE)           
-  #   workspaces:
-  #   - name: source
-  #     workspace: shared-workspace
-
   - name: fetch-repository
     taskRef:
       name: git-clone
@@ -136,14 +119,3 @@ spec:
       - rox-deployment-check
       - rox-image-check
       - rox-image-scan
-
-  # - name: update-deployment
-  #   taskRef:
-  #     name: update-deployment
-  #   params:
-  #   - name: deployment
-  #     value: $(params.deployment-name)
-  #   - name: IMAGE
-  #     value: $(params.IMAGE)
-  #   runAfter:
-  #   - apply-manifests
